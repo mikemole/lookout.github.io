@@ -46,5 +46,6 @@ Special care is taken to make sure that the coordination of the query happens on
 Just want a standalone binary? Grab the jar from [bintray](https://bintray.com/lookout/systems/cassandra-health-check#files), then just run it with
 
     java -jar cassandra-health-check-1.0.0-all.jar
-\---  
-\- [Ron Kuris](https://github.com/rkuris)
+
+---  
+- [Ron Kuris](https://github.com/rkuris)
