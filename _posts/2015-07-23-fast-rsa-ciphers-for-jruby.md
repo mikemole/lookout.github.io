@@ -17,17 +17,17 @@ this backend infrastructure is [JRuby](http://jruby.org).
 
 The JRuby runtime is compelling for a number of reasons, one of the most often
 touted is performance. Like many users we've generally seen good performance
-from JRuby, so imagine our surprise when we found downright _lethargic_
-performance in some of our OpenSSL operations.
+from JRuby, so imagine our surprise when we found ponderously slow performance
+in some of our OpenSSL operations.
 
-Despite generally positive performance in JRuby, it's still restricted to
-performance of the JVM. In the case of OpenSSL operations, what's really being
-compared is the performance of Java's SSL library versus the
-[openssl's](http://openssl.org/) C library. Unfortunately, for RSA-specific
-operations, Java has some slower math operations under the covers.  For
-example, here's some
-benchmark code using RSA ciphers for signing/signature
-verification/encryption/decription on MRI versus JRuby 1.7.21:
+Despite generally positive Ruby performance in JRuby, overall performance is
+still tied to the capabilities of the JVM itself. In the case of OpenSSL
+operations, what's really being compared is the performance of Java's SSL
+library versus the [openssl's](http://openssl.org/) C library. Unfortunately,
+for RSA-specific operations, Java has some slower math operations under the
+covers.  For example, here's some benchmark code using RSA ciphers for
+signing/signature verification/encryption/decription on MRI versus JRuby
+1.7.21:
 
 
     $ ruby2.1 -v benchmark.rb
